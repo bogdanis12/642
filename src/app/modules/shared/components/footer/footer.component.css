@@ -1,0 +1,138 @@
+footer {
+  font-size: 16px;
+  background: #673ab7;
+  padding: 2em 4em;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1em;
+}
+
+footer ul {
+  list-style: none;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.col-title {
+  color: #f2f3fb;
+  font-size: 1.1em;
+  font-weight: 500;
+  padding: 0.5em 0;
+}
+
+.col-list a {
+  color: #f2f3fb;
+  text-decoration: none;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.col-list a:hover,
+.col-list a:focus {
+  text-decoration: underline;
+}
+
+.email {
+  color: #f2f3fb;
+}
+
+.email::placeholder {
+  color: #f1f2fc;
+}
+
+.subscribe-form,
+.social-media {
+  display: flex;
+  gap: 0.5em;
+  padding: 0.5em 0;
+}
+
+.subscribe-input {
+  width: auto;
+  flex: 1;
+  background: transparent;
+  border: 0.06em solid #f2f3fb;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 0.5em;
+  border-radius: 0.3em;
+  transition: all 0.25s ease 0s;
+  display: inline-block;
+  color: #f2f3fb;
+}
+
+.subscribe-input:focus {
+  outline: none;
+  border-color: #e5e7fa;
+  color: #f2f3fb;
+}
+
+.subscribe-btn {
+  background: #f1f2fc;
+  border: none;
+  font-size: 1em;
+  font-weight: 600;
+  padding: 0.5em;
+  border-radius: 0.3em;
+  transition: all 0.25s ease 0s;
+  display: inline-block;
+  color: #1e2641;
+  cursor: pointer;
+}
+
+.subscribe-btn:hover,
+.subscribe-btn:focus {
+  background: #d5d9f6;
+}
+
+.form-title,
+.social-col-title {
+  font-size: 1em;
+  color: #f2f3fb;
+  font-weight: 500;
+}
+
+.social-media {
+  flex-direction: column;
+}
+
+.social-media-list {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.social-media-list a {
+  padding: 0.5em;
+  color: #f2f3fb;
+  display: flex;
+  border-radius: 0.3em;
+  transition: all 0.25s ease 0s;
+}
+
+.social-media-list a:hover,
+.social-media-list a:focus {
+  color: #f2f3fb;
+  background: #ffffff1a;
+}
+
+.social-media-list svg {
+  width: 1.5em;
+  height: 1.5em;
+  transition: all 0.25s ease 0s;
+}
+
+@media screen and (max-width: 750px) {
+  footer {
+    padding: 2em;
+    flex-direction: column;
+  }
+}

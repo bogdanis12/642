@@ -1,0 +1,77 @@
+<div class="wrapper">
+  <div class="search-shifts">
+    <mat-form-field>
+      <input #input type="text" matInput placeholder="Search... "
+    /></mat-form-field>
+    <mat-form-field class="example-form-field" *ngIf="userShifts.length">
+      <mat-label>Enter a date range</mat-label>
+      <mat-date-range-input [rangePicker]="rangePicker">
+        <input matStartDate placeholder="Start date" #dateRangeStart />
+        <input matEndDate placeholder="End date" #dateRangeEnd />
+      </mat-date-range-input>
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="rangePicker"
+      ></mat-datepicker-toggle>
+      <mat-date-range-picker #rangePicker>
+        <mat-date-range-picker-actions>
+          <button mat-button matDateRangePickerCancel>Cancel</button>
+          <button
+            (click)="onApply()"
+            mat-raised-button
+            color="primary"
+            matDateRangePickerApply
+          >
+            Apply
+          </button>
+        </mat-date-range-picker-actions>
+      </mat-date-range-picker>
+      <button matSuffix mat-icon-button aria-label="Clear" (click)="onClear()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+
+  <table class="c-table" *ngIf="userShifts.length">
+    <thead class="c-table__header">
+      <tr>
+        <th class="displayed-columns" *ngFor="let title of displayedColumns">
+          {{ title }}
+        </th>
+      </tr>
+    </thead>
+    <tbody class="c-table__body">
+      <tr
+        *ngFor="let shift of localShifts"
+        (click)="selectShiftToEdit(shift)"
+        class="table-rows"
+      >
+        <td class="c-table__cell">{{ shift.shiftName }}</td>
+        <td class="c-table__cell">{{ shift.beginningTime }}</td>
+        <td class="c-table__cell">{{ shift.endTime }}</td>
+        <td class="c-table__cell">{{ shift.date }}</td>
+        <td class="c-table__cell">{{ shift.profitPerHour | currency }}</td>
+        <td class="c-table__cell">{{ profit(shift) | currency }}</td>
+        <td class="c-table__cell">{{ shift.option }}</td>
+        <td class="c-table__cell">{{ shift.comment }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="!localShifts.length && userShifts.length" class="no-shifts-found">
+    <p>There are no shifts matching your search criteria...</p>
+    <img src="../../../../../assets/images/Team work_Two Color.svg" alt="" />
+  </div>
+  <div *ngIf="!userShifts.length && !isLoading" class="new-user-no-content">
+    <img
+      src="../../../../../assets/images/Product Manager_Flatline.svg"
+      alt=""
+    />
+    <p>
+      Hi there, it seems like you don't have any shifts yet! Press the button
+      bellow to create your first shift
+    </p>
+    <button mat-raised-button color="accent" (click)="onAddShift()">
+      Add Shift
+    </button>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,600;1,400&family=Pacifico&family=Poppins:wght@200;400;600&display=swap");
+.links {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+}
+a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 300;
+  text-shadow: 1px 1px 1px rgb(66, 66, 66);
+}
+.logo {
+  width: 50%;
+  padding-left: 2rem;
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 300;
+}
+.logo a {
+  font-size: 2rem;
+}
+
+.mat-toolbar {
+  height: 60px;
+}
+
+.email {
+  min-width: 200px;
+}
+
+.accent {
+  background-color: rgba(235, 235, 235, 0.229);
+}
+
+a {
+  border: none;
+}

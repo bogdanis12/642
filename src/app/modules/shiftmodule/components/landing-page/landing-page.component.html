@@ -1,0 +1,160 @@
+<div class="wrapper" *ngIf="this.myShifts.length && !isAdmin">
+  <mat-card>
+    <div>
+      <mat-card-title>This week shifts</mat-card-title>
+      <div *ngIf="!this.thisWeekShifts.length">
+        <p>There are no shifts available for this week</p>
+        <img
+          class="no-shifts"
+          src="../../../../../assets/images/Team work_Two Color.svg"
+          alt=""
+        />
+      </div>
+      <table class="c-table" *ngIf="thisWeekShifts.length">
+        <thead class="c-table__header">
+          <tr>
+            <th *ngFor="let title of displayedColumns">{{ title }}</th>
+          </tr>
+        </thead>
+        <tbody class="c-table__body">
+          <tr
+            *ngFor="let shift of thisWeekShifts"
+            (click)="selectShiftToEdit(shift)"
+          >
+            <td class="c-table__cell">{{ shift.shiftName }}</td>
+            <td class="c-table__cell">{{ shift.beginningTime }}</td>
+            <td class="c-table__cell">{{ shift.endTime }}</td>
+            <td class="c-table__cell">{{ shift.date }}</td>
+            <td class="c-table__cell">{{ shift.profitPerHour | currency }}</td>
+            <td class="c-table__cell">{{ profit(shift) | currency }}</td>
+            <td class="c-table__cell">{{ shift.option }}</td>
+            <td class="c-table__cell">{{ shift.comment }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </mat-card>
+  <mat-card>
+    <div>
+      <mat-card-title>Upcoming shifts</mat-card-title>
+      <div *ngIf="!this.upcomingShifts.length">
+        <p>There are no upcoming shifts available</p>
+        <img
+          class="no-shifts"
+          src="../../../../../assets/images/Team work_Two Color.svg"
+          alt=""
+        />
+      </div>
+      <table class="c-table" *ngIf="upcomingShifts.length">
+        <thead class="c-table__header">
+          <tr>
+            <th *ngFor="let title of displayedColumns">{{ title }}</th>
+          </tr>
+        </thead>
+        <tbody class="c-table__body">
+          <tr
+            *ngFor="let shift of upcomingShifts"
+            (click)="selectShiftToEdit(shift)"
+          >
+            <td class="c-table__cell">{{ shift.shiftName }}</td>
+            <td class="c-table__cell">{{ shift.beginningTime }}</td>
+            <td class="c-table__cell">{{ shift.endTime }}</td>
+            <td class="c-table__cell">{{ shift.date }}</td>
+            <td class="c-table__cell">{{ shift.profitPerHour | currency }}</td>
+            <td class="c-table__cell">{{ profit(shift) | currency }}</td>
+            <td class="c-table__cell">{{ shift.option }}</td>
+            <td class="c-table__cell">{{ shift.comment }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div></mat-card
+  >
+</div>
+<div *ngIf="this.myShifts.length" class="most-profitable-month">
+  <p>{{ messageToDisplayForMostProfit }}</p>
+</div>
+
+<div *ngIf="isAdmin" class="wrapper admin-wrapper">
+  <mat-card>
+    <div>
+      <mat-card-title>All shifts</mat-card-title>
+      <div *ngIf="!allShifts">
+        <p>There are no shifts available</p>
+        <img
+          class="no-shifts"
+          src="../../../../../assets/images/Team work_Two Color.svg"
+          alt=""
+        />
+      </div>
+      <table class="c-table" *ngIf="allShifts.length">
+        <thead class="c-table__header">
+          <tr>
+            <th *ngFor="let title of displayedColumns">{{ title }}</th>
+          </tr>
+        </thead>
+        <tbody class="c-table__body">
+          <tr
+            *ngFor="let shift of allShifts"
+            (click)="selectShiftToEdit(shift)"
+          >
+            <td class="c-table__cell">{{ shift.shiftName }}</td>
+            <td class="c-table__cell">{{ shift.beginningTime }}</td>
+            <td class="c-table__cell">{{ shift.endTime }}</td>
+            <td class="c-table__cell">{{ shift.date }}</td>
+            <td class="c-table__cell">{{ shift.profitPerHour | currency }}</td>
+            <td class="c-table__cell">{{ profit(shift) | currency }}</td>
+            <td class="c-table__cell">{{ shift.option }}</td>
+            <td class="c-table__cell">{{ shift.comment }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </mat-card>
+  <mat-card>
+    <div>
+      <mat-card-title>All users</mat-card-title>
+      <div *ngIf="!allShifts">
+        <p>There are no users available</p>
+        <img
+          class="no-shifts"
+          src="../../../../../assets/images/Team work_Two Color.svg"
+          alt=""
+        />
+      </div>
+      <table class="c-table" *ngIf="users.length">
+        <thead class="c-table__header">
+          <tr>
+            <th *ngFor="let title of displayedColumnsUsers">{{ title }}</th>
+          </tr>
+        </thead>
+        <tbody class="c-table__body">
+          <tr *ngFor="let user of users; let i = index">
+            <td class="c-table__cell">{{ user.email }}</td>
+            <td class="c-table__cell">{{ user.lastName }}</td>
+            <td class="c-table__cell">{{ user.firstName }}</td>
+            <td class="c-table__cell">{{ user.age }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </mat-card>
+</div>
+<div
+  *ngIf="
+    !thisWeekShifts.length &&
+    !upcomingShifts.length &&
+    !isLoading &&
+    !isAdmin &&
+    !myShifts.length
+  "
+  class="new-user-no-content2"
+>
+  <img src="../../../../../assets/images/Product Manager_Flatline.svg" alt="" />
+  <p>
+    Hi there, it seems like you don't have any shifts yet! Press the button
+    bellow to create your first shift
+  </p>
+  <button mat-raised-button color="accent" (click)="onAddShift()">
+    Add Shift
+  </button>
+</div>

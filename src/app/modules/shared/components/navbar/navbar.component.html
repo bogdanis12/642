@@ -1,0 +1,45 @@
+<mat-toolbar color="primary">
+  <div class="logo"><a [routerLink]="routePaths.HOME">managefy</a></div>
+  <div class="links">
+    <a
+      mat-stroked-button
+      [routerLink]="routePaths.HOME"
+      routerLinkActive="accent"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >{{ linksToNavigate.HOME | uppercase }}</a
+    >
+    <a
+      *ngIf="!isUserNew"
+      mat-stroked-button
+      [routerLink]="routePaths.MY_SHIFTS"
+      routerLinkActive="accent"
+      >{{ linksToNavigate.MY_SHIFTS | uppercase }}</a
+    >
+
+    <a
+      mat-stroked-button
+      [routerLink]="routePaths.EDIT_PROFILE"
+      routerLinkActive="accent"
+      >{{ linksToNavigate.EDIT_PROFILE | uppercase }}</a
+    >
+
+    <a
+      mat-stroked-button
+      [routerLink]="routePaths.ADD_SHIFT"
+      routerLinkActive="accent"
+      >{{ linksToNavigate.ADD_SHIFT | uppercase }}</a
+    >
+    <a
+      mat-stroked-button
+      (click)="onLogOutClick()"
+      [routerLink]="routePaths.LOGOUT"
+      >{{ linksToNavigate.LOGOUT | uppercase }}</a
+    >
+    <a
+      [ngClass]="'email'"
+      mat-stroked-button
+      [routerLink]="routePaths.EDIT_PROFILE"
+      >{{ userEmail }}</a
+    >
+  </div>
+</mat-toolbar>

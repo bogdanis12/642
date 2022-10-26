@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,600;1,400&family=Pacifico&family=Poppins:wght@200;400;600&display=swap");
+.form-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 60%;
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+mat-card {
+  width: 80%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+form {
+  margin-right: 2rem;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+}
+a {
+  text-decoration: none;
+  color: #673ab7;
+  text-align: center;
+  margin-top: 1rem;
+}
+mat-card-title {
+  margin-bottom: 1.4rem;
+  color: #673ab7;
+  font-size: 2rem;
+  text-shadow: 1px 1px 1px rgb(66, 66, 66);
+  width: 100%;
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 300;
+}
+.error-firebase {
+  height: 30px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

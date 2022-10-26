@@ -1,0 +1,63 @@
+<div class="edit-form-container">
+  <mat-card>
+    <mat-card-title>Edit your profile</mat-card-title>
+    <form (submit)="onEditProfile()" [formGroup]="editProfileForm">
+      <mat-form-field appearance="fill">
+        <mat-label floatLabel="never">Email</mat-label>
+        <input
+          class="email"
+          type="email"
+          matInput
+          [formControlName]="'email'"
+          placeholder="a@b.com"
+          readonly
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input
+          class="first-name"
+          type="text"
+          matInput
+          [formControlName]="'firstName'"
+          placeholder="John"
+        />
+        <mat-error *ngIf="firstName!.invalid">{{
+          getErrorMessageFirstName()
+        }}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input
+          class="last-name"
+          type="text"
+          matInput
+          [formControlName]="'lastName'"
+          placeholder="Doe"
+        />
+        <mat-error *ngIf="lastName!.invalid">{{
+          getErrorMessageLastName()
+        }}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Age</mat-label>
+        <input
+          type="text"
+          matInput
+          [formControlName]="'age'"
+          placeholder="18 min"
+          class="age"
+        />
+        <mat-error *ngIf="age!.invalid">{{ getErrorMessageAge() }}</mat-error>
+      </mat-form-field>
+
+      <button
+        mat-flat-button
+        color="primary"
+        [disabled]="this.editProfileForm.invalid"
+      >
+        Edit
+      </button>
+    </form>
+  </mat-card>
+</div>

@@ -1,0 +1,46 @@
+<div class="form-container">
+  <mat-card>
+    <mat-card-title>managefy</mat-card-title>
+    <div class="image-container">
+      <img src="../../../../../assets/images/welcome.svg" alt="login-image" />
+    </div>
+    <form (submit)="onLogin()" [formGroup]="loginForm">
+      <mat-form-field class="email">
+        <mat-label>Email</mat-label>
+        <input
+          type="email"
+          matInput
+          [formControlName]="'email'"
+          placeholder="a@b.com"
+        />
+        <mat-error *ngIf="email!.invalid || errorExist">{{
+          getErrorMessageEmail()
+        }}</mat-error>
+        <!-- <mat-error *ngIf="error">{{ error }}</mat-error> -->
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input
+          type="password"
+          matInput
+          [formControlName]="'password'"
+          placeholder="password"
+        />
+        <mat-error *ngIf="password!.invalid || errorExist">{{
+          getErrorMessagePassword()
+        }}</mat-error>
+      </mat-form-field>
+      <div class="error-firebase">
+        <mat-error *ngIf="errorExist">{{ errorToShow }}</mat-error>
+      </div>
+      <button
+        mat-flat-button
+        color="primary"
+        [disabled]="this.loginForm.invalid"
+      >
+        LOGIN
+      </button>
+      <a [routerLink]="'/auth/register'">No account? Sign Up</a>
+    </form>
+  </mat-card>
+</div>

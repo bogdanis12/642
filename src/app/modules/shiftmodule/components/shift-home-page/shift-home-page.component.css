@@ -1,0 +1,171 @@
+table {
+  width: 80%;
+}
+/* General styles */
+
+body {
+  background-color: #f3f3f3;
+  font-family: Futura, sans-serif;
+}
+
+.wrapper {
+  margin: 24px 180px;
+  min-height: 55.4%;
+}
+
+h1 {
+  color: #673ab7;
+  text-align: center;
+}
+
+/* Table styles */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  box-shadow: 0 1px 9px 1px rgba(0, 0, 0, 0.28);
+}
+th {
+  text-shadow: 1px 1px 1px rgb(66, 66, 66);
+}
+td,
+th {
+  padding: 0;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 0.2px 0.2px 0.2px rgba(0, 0, 0, 0.28);
+}
+
+td:first-of-type {
+  padding-left: 36px;
+  width: 66px;
+}
+
+.c-table {
+  background-color: #fff;
+  font-size: 12px;
+  line-height: 1.25;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.c-table__cell {
+  padding: 12px 6px 12px 12px;
+  word-wrap: break-word;
+}
+
+.c-table__header tr {
+  color: #fff;
+}
+
+.c-table__header th {
+  background-color: #673ab7;
+  padding: 18px 6px 18px 12px;
+}
+
+.c-table__body tr {
+  border-bottom: 1px solid rgba(113, 110, 182, 0.15);
+}
+
+.c-table__body tr:last-child {
+  border-bottom: none;
+}
+
+.c-table__body tr:hover {
+  background-color: rgba(113, 110, 182, 0.15);
+  color: #272b37;
+}
+
+.c-table__label {
+  display: none;
+}
+
+p {
+  color: #6c757d;
+}
+.new-user-no-content {
+  width: 80vw;
+  height: 78vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-shifts {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+
+img {
+  max-width: 1200px;
+  min-width: 600px;
+}
+
+.no-shifts-found {
+  width: 100%;
+  text-align: center;
+}
+
+.no-shifts-found > p {
+  font-size: 1.5rem;
+}
+
+/* Mobile table styles */
+
+@media only screen and (max-width: 767px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  td:first-child {
+    padding-top: 24px;
+  }
+
+  td:last-child {
+    padding-bottom: 24px;
+  }
+
+  .c-table {
+    border: 1px solid rgba(113, 110, 182, 0.15);
+    font-size: 15px;
+    line-break: 1.2;
+  }
+
+  .c-table__header tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .c-table__cell {
+    padding: 12px 24px;
+    position: relative;
+    width: 100%;
+    word-wrap: break-word;
+  }
+
+  .c-table__label {
+    color: #272b37;
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+
+  .c-table__body tr:hover {
+    background-color: transparent;
+  }
+
+  .c-table__body tr:nth-child(odd) {
+    background-color: rgba(113, 110, 182, 0.04);
+  }
+}
