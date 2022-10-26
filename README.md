@@ -1,4 +1,5 @@
-## If github pages does not work please enter here: https://tourmaline-pithivier-0fed7f.netlify.app/shifts/my-shifts
+## If github pages does not work please enter here:
+https://tourmaline-pithivier-0fed7f.netlify.app
 
 # FinalProjectAngular
 
