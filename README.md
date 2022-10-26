@@ -1,3 +1,5 @@
+## If github pages does not work please enter here: https://tourmaline-pithivier-0fed7f.netlify.app/shifts/my-shifts
+
 # FinalProjectAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
